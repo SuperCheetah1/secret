@@ -1,0 +1,148 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #3f4255;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== NAV MENU ===== */
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2c2e40;
+  padding: 15px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 35px;
+}
+
+.menu ul li a {
+  color: #b2b1b1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #19dafa;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  min-height: 100vh;
+  padding: 120px 60px 80px;
+  text-align: center;
+}
+
+section h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #19dafa;
+  text-shadow: 2px 2px 0 #000;
+}
+
+section p {
+  color: #d3d3d3;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+/* ===== HOME ===== */
+.image-pair {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.image-pair img {
+  width: 640px;
+  height: 640px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
+  transition: all 0.3s;
+}
+
+.image-pair img:nth-child(2) {
+  transform: rotate(3deg);
+}
+
+.image-pair img:hover {
+  transform: scale(1.1) rotate(0deg);
+}
+
+/* ===== GOOFY ===== */
+#goofy {
+  background: #36384c;
+  border-top: 2px dashed #19dafa;
+}
+
+/* ===== BIRTHDAY / GALLERY ===== */
+#birthday {
+  background: #2a2c3c;
+  border-top: 3px dashed #19dafa;
+  position: relative;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;         /* allow images to go to next line */
+  gap: 8px;                /* spacing between images */
+  justify-content: center; /* center the collage */
+}
+
+.gallery img {
+  max-width: 300px;        /* keeps images reasonably big */
+  height: auto;            /* maintain original aspect ratio */
+  display: block;          /* remove inline spacing */
+  object-fit: cover;       /* fills width while preserving ratio */
+  transform: rotate(calc(-2deg + 4deg * var(--i))); /* slight random tilt */
+}
+
+/* Optional: add some hover “wiggle” for fun */
+.gallery img:hover {
+  transform: rotate(0deg) scale(1.05);
+  transition: all 0.2s;
+}
+
+/* Random goofy background behind gallery */
+#birthday::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 10% 20%, rgba(255, 0, 150, 0.1), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1), transparent 40%);
+  z-index: 0;
+}
+
+#birthday h1 {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery {
+  position: relative;
+  z-index: 1;
+}
