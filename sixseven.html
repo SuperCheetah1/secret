@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Six or Seven?</title>
+  <link rel="stylesheet" href="sixsevenstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+</head>
+<body>
+	<audio id="backgroundAudio" loop>
+    <source src="mergedaudio.mp3" type="audio/mpeg">
+  </audio>
+  <div class="menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+			<li class="active">
+  			<a href="https://www.youtube.com/watch?v=j5a0jTc9S10" target="_blank">goofy ahh</a>
+			</li>
+      <li><a href="#birthday">well well well, who is 19 years old now?</a></li>
+    </ul>
+  </div>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h1>get a load of this guy</h1>
+    <p>corporate wants you to find the difference between this picture and this picture</p>
+		<p>click anywhere for enhanced experience :D</p>
+    <div class="image-pair">
+      <img src="monkey-selfie.jpg" alt="Monkey Selfie">
+      <img src="covervarun.jpg" alt="Varun Cover">
+    </div>
+  </section>
+
+  <!-- Birthday Section (renamed from gallery) -->
+  <section id="birthday">
+    <h1>well well well, who is 19 years old now?</h1>
+		<p>happy birthday unc</p>
+		<p>whats 9+10</p>
+    <div class="gallery">
+			<img src="varun1.jpg" alt="Birthday Image 1">
+			<img src="varun2.jpg" alt="Birthday Image 2">
+			<img src="varun3.jpg" alt="Birthday Image 3">
+			<img src="varun4.jpg" alt="Birthday Image 4">
+			<img src="varun5.jpg" alt="Birthday Image 5">
+			<img src="varun6.jpg" alt="Birthday Image 6">
+			<img src="varun7.jpg" alt="Birthday Image 7">
+			<img src="varun8.jpg" alt="Birthday Image 8">
+			<img src="varun9.jpg" alt="Birthday Image 9">
+			<img src="varun10.jpg" alt="Birthday Image 10">
+			<img src="varun11.jpg" alt="Birthday Image 11">
+			<img src="varun12.jpg" alt="Birthday Image 12">
+			<img src="varun13.jpg" alt="Birthday Image 13">
+			<img src="varun14.jpg" alt="Birthday Image 14">
+			<img src="varun15.jpg" alt="Birthday Image 15">
+			<img src="varun16.jpg" alt="Birthday Image 16">
+			<img src="varun17.jpg" alt="Birthday Image 17">
+			<img src="varun18.jpg" alt="Birthday Image 18">
+			<img src="varun19.jpg" alt="Birthday Image 19">
+			<img src="varun20.jpg" alt="Birthday Image 20">
+			<img src="varun21.jpg" alt="Birthday Image 21">
+			<img src="varun22.jpg" alt="Birthday Image 22">
+			<img src="varun23.jpg" alt="Birthday Image 23">
+			<img src="varun24.jpg" alt="Birthday Image 24">
+			<img src="varun25.jpg" alt="Birthday Image 25">
+			<img src="varun26.jpg" alt="Birthday Image 26">
+			<img src="varun27.jpg" alt="Birthday Image 27">
+			<img src="varun28.jpg" alt="Birthday Image 28">
+			<img src="varun29.jpg" alt="Birthday Image 29">
+			<img src="varun30.jpg" alt="Birthday Image 30">
+			<img src="varun31.jpg" alt="Birthday Image 31">
+			<img src="varun32.jpg" alt="Birthday Image 32">
+			<img src="varun34.jpg" alt="Birthday Image 34">
+			<img src="varun35.jpg" alt="Birthday Image 35">
+			<img src="varun51.jpg" alt="Birthday Image 51">
+			<img src="varun36.jpg" alt="Birthday Image 36">
+			<img src="varun37.jpg" alt="Birthday Image 37">
+			<img src="varun38.jpg" alt="Birthday Image 38">
+			<img src="varun39.jpg" alt="Birthday Image 39">
+			<img src="varun40.jpg" alt="Birthday Image 40">
+			<img src="varun41.jpg" alt="Birthday Image 41">
+			<img src="varun42.jpg" alt="Birthday Image 42">
+			<img src="varun43.jpg" alt="Birthday Image 43">
+			<img src="varun44.jpg" alt="Birthday Image 44">
+			<img src="varun45.jpg" alt="Birthday Image 45">
+			<img src="varun46.jpg" alt="Birthday Image 46">
+			<img src="varun47.jpg" alt="Birthday Image 47">
+			<img src="varun48.jpg" alt="Birthday Image 48">
+			<img src="varun49.jpg" alt="Birthday Image 49">
+			<img src="varun50.jpg" alt="Birthday Image 50">
+			<img src="varun52.jpg" alt="Birthday Image 52">
+			<h1>happy birthday varun :)</h1>
+    </div>
+  </section>
+	<script>
+    const audio = document.getElementById('backgroundAudio');
+
+    // Try to autoplay muted
+    audio.muted = true;
+    audio.play().catch(() => {
+      console.log("Autoplay blocked, waiting for user interaction...");
+    });
+
+    // Unmute on first click or key press
+    const unmuteAudio = () => {
+      audio.muted = false;
+      audio.play().catch(() => console.log("Still blocked."));
+      window.removeEventListener('click', unmuteAudio);
+      window.removeEventListener('keydown', unmuteAudio);
+    };
+
+    window.addEventListener('click', unmuteAudio);
+    window.addEventListener('keydown', unmuteAudio);
+  </script>
+</body>
+</html>
